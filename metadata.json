@@ -1,0 +1,8 @@
+{
+  "name": "Remix Zona Gris FPS",
+  "description": "Videojuego de disparos en primera persona con jugador, múltiples armas, enemigos estáticos y mapa de suelo gris.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

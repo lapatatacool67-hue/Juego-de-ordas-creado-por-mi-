@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-display {
+  font-family: 'Chakra Petch', system-ui, sans-serif;
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes menuPanelReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(-28px, 14px, 0) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes menuItemReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(-14px, 10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes loadingEmblemFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0) scale(1.04);
+  }
+}
+
+.animate-menu-panel {
+  animation: menuPanelReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-menu-item {
+  animation: menuItemReveal 0.48s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-loading-emblem {
+  animation: loadingEmblemFloat 2.2s ease-in-out infinite;
+}
+
+@keyframes loadingCurtainIn {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+@keyframes loadingCardIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes loadingCurtainOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+
+.animate-loading-curtain-enter {
+  animation: loadingCurtainIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-loading-card-enter {
+  animation: loadingCardIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-loading-curtain-leave {
+  animation: loadingCurtainOut 0.24s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-menu-panel,
+  .animate-menu-item,
+  .animate-loading-emblem,
+  .animate-loading-curtain-enter,
+  .animate-loading-card-enter,
+  .animate-loading-curtain-leave {
+    animation: none;
+  }
+}
+
